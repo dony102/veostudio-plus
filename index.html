@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Veo Studio — PLUS</title>
+  <meta name="description" content="Veo Studio: frontend demo Veo3 dengan opsi lanjutan & theme toggle." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hdr flex">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="" class="logo" />
+        <div>
+          <h1>Veo Studio</h1>
+          <p class="sub">Frontend demo untuk Veo3 & tools terkait</p>
+        </div>
+      </div>
+      <div class="hdr-actions">
+        <button id="themeToggle" title="Ganti tema">🌓</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="grid2">
+        <div>
+          <label for="mode">Pilih Modul</label>
+          <select id="mode">
+            <option value="veo3">VEO 3</option>
+            <option value="veo3fast">VEO 3 Fast</option>
+            <option value="img2prompt">img2prompt (dari gambar)</option>
+            <option value="txt2img">txt2img (dari teks)</option>
+            <option value="cai">CAI (Chat AI)</option>
+            <option value="changeclothes">AI Change Clothes</option>
+          </select>
+        </div>
+        <div>
+          <label for="quality">Kualitas</label>
+          <select id="quality">
+            <option value="fast">Fast</option>
+            <option value="standard" selected>Standard</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <label>Upload Gambar (opsional)</label>
+          <input id="image" type="file" accept="image/*" />
+          <button id="autoPrompt">Ambil Prompt Otomatis</button>
+        </div>
+        <div>
+          <label>Prompt</label>
+          <textarea id="prompt" rows="4" placeholder="Tulis prompt…"></textarea>
+        </div>
+      </div>
+
+      <details class="adv">
+        <summary>Opsi Lanjutan</summary>
+        <div class="grid3">
+          <div>
+            <label for="ratio">Aspect Ratio</label>
+            <select id="ratio">
+              <option value="1:1">1:1</option>
+              <option value="9:16">9:16</option>
+              <option value="16:9" selected>16:9</option>
+              <option value="4:5">4:5</option>
+            </select>
+          </div>
+          <div>
+            <label for="duration">Durasi (detik)</label>
+            <input id="duration" type="number" min="1" max="90" value="5" />
+          </div>
+          <div>
+            <label for="seed">Seed</label>
+            <input id="seed" type="number" min="0" placeholder="acak" />
+          </div>
+          <div>
+            <label for="guidance">Guidance</label>
+            <input id="guidance" type="range" min="1" max="20" value="7" />
+            <small id="guidanceVal">7</small>
+          </div>
+          <div>
+            <label for="neg">Negative Prompt</label>
+            <input id="neg" type="text" placeholder="mis. noisy, blurry" />
+          </div>
+          <div class="check">
+            <input id="remember" type="checkbox" />
+            <label for="remember">Simpan preferensi (localStorage)</label>
+          </div>
+        </div>
+      </details>
+
+      <div class="actions">
+        <button id="start">START</button>
+        <span id="status"></span>
+      </div>
+      <div id="output" class="out card lite"></div>
+    </section>
+
+    <section class="gallery card">
+      <h3>Hasil</h3>
+      <div id="gallery" class="thumbs"></div>
+    </section>
+
+    <footer class="ft">
+      <small>© Veo Studio — MIT. Edit endpoint & API key di <code>config.json</code> atau <code>assets/app.js</code>.</small>
+    </footer>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

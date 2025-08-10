@@ -1,0 +1,12 @@
+{
+  "VEO_API": "",
+  "VEO_FAST_API": "",
+  "IMG2PROMPT_API": "",
+  "TXT2IMG_API": "",
+  "CHAT_API": "",
+  "CHANGE_CLOTHES_API": "",
+  "AUTH": {
+    "header": "",
+    "value": ""
+  }
+}
